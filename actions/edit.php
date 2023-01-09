@@ -37,11 +37,11 @@ $product = $productList->getProductById($id);
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Product name:</label>
-                <input type="text" class="form-control" id="name" name="name" value="<?php echo $product['name']; ?>">
+                <input type="text" class="form-control" id="name" name="name" value="<?php echo $product['name']; ?>" required>
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Product price:</label>
-                <input type="text" class="form-control" id="price" name="price" pattern="\d+" value="<?php echo $product['price']; ?>">
+                <input type="text" class="form-control" id="price" name="price" pattern="\d*" value="<?php echo $product['price']; ?>">
             </div>
             <div class="mb-3">
                 <label for="floatingTextarea">Product description:</label>

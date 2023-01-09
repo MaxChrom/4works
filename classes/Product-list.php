@@ -60,9 +60,14 @@ class ProductList
     }
 
     public function updateProduct($name, $price, $description, $id)  
-    {
-        $stmt = $this->database->prepare("UPDATE $this->table SET name = ?, price = ?, description = ? WHERE id = ?");
-        $stmt->execute([$name, $price, $description, $id]);
+    {   
+        if($price === "") {
+            $stmt = $this->database->prepare("UPDATE $this->table SET name = ?, price = ?, description = ? WHERE id = ?");
+            $stmt->execute([$name, 0, $description, $id]);
+        } else {
+            $stmt = $this->database->prepare("UPDATE $this->table SET name = ?, price = ?, description = ? WHERE id = ?");
+            $stmt->execute([$name, $price, $description, $id]);
+        }
     }
 
     public function seedDatabase($products)
