@@ -26,7 +26,7 @@ require_once '../classes/Product-list.php';
         <form method="post" action="./insert.php">
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Product name:</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label" pattern="\d+">Product price:</label>
